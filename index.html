@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Cardfolio Showcase</title>
+<title>Toploader Showcase</title>
 <style>
   :root { color-scheme: dark; }
   * { box-sizing: border-box; margin: 0; }
@@ -25,7 +25,7 @@
 <p class="sub" id="sub"></p>
 <div class="grid" id="grid"></div>
 <p class="status" id="status">Loading collection…</p>
-<p class="footer">Shared with Cardfolio</p>
+<p class="footer">Shared with Toploader</p>
 <script>
 (async function () {
   const DATA_URL = "https://jjjexgftjncllftgzvbu.supabase.co/functions/v1/showcase";
@@ -36,7 +36,7 @@
     const res = await fetch(DATA_URL + "?s=" + encodeURIComponent(slug));
     if (!res.ok) { status.textContent = "This showcase doesn't exist or was turned off."; return; }
     const data = await res.json();
-    document.title = data.name + " — Cardfolio";
+    document.title = data.name + " — Toploader";
     document.getElementById("title").textContent = data.name;
     document.getElementById("sub").textContent = data.cards.length + " cards";
     const grid = document.getElementById("grid");
